@@ -1,0 +1,15 @@
+{
+    "params" :
+    {
+        "local_server" : "True",
+        "local_URI" : "mysql://root@localhost/liver_db", 
+        "production_URI" : "mysql://username:password@localhost/db_name"  ,
+
+        "secret_key" : "mysecretkey",
+
+        "MAIL_SERVER" : "smtp.gmail.com",
+        "MAIL_PORT" : 465,
+        "MAIL_USERNAME" : "safeinsightsofficial@gmail.com",
+        "MAIL_PASSWORD" : "iiql dbxy jcrl givm"
+    }
+}
