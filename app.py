@@ -220,5 +220,11 @@ def change_pass():
     return render_template('change_pass.html', params = params)
 
 
+@app.route('/logout')
+def logout():
+    logout_user()
+    return redirect(url_for('initial_page'))
+
+
 if __name__ == "__main__":
     app.run(debug=True)
