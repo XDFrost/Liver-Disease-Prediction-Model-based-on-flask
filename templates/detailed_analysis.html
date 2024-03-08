@@ -29,6 +29,10 @@
         </div>
     </div>
 
+    <div class = "heading_">
+        <h1>Detailed Analysis</h1>
+    </div>
+
     <table>
         <thead>
             <tr>
@@ -63,6 +67,46 @@
             </tr>
         </tbody>
     </table>
-    <img src="{{url_for('static', filename = 'assets/img/plots.png')}}" alt="img" class = plots>
+    <div class = "heading_">
+        <h1>Plots</h1>
+    </div>
+    <div class = plot>
+        <img src="{{url_for('static', filename = 'assets/img/age_plt.png')}}" alt="img" class = plots>
+        <img src="{{url_for('static', filename = 'assets/img/BMI_plt.png')}}" alt="img" class = plots>
+        <img src="{{url_for('static', filename = 'assets/img/bp_plt.png')}}" alt="img" class = plots>
+        <img src="{{url_for('static', filename = 'assets/img/dpf_plt.png')}}" alt="img" class = plots>
+        <img src="{{url_for('static', filename = 'assets/img/glucose_plt.png')}}" alt="img" class = plots>
+        <img src="{{url_for('static', filename = 'assets/img/insulin.png')}}" alt="img" class = plots>
+        <img src="{{url_for('static', filename = 'assets/img/pregnancies.png')}}" alt="img" class = plots>
+        <img src="{{url_for('static', filename = 'assets/img/skin.png')}}" alt="img" class = plots>
+    </div>
+    <div class = "heading_">
+        <h1>Matrix result</h1>
+    </div>
+    <div class="plot">
+        <img src="{{url_for('static', filename = 'assets/img/cf.png')}}" alt="">
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>Model</th>
+                <th>Accuracy</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr id="precision">
+                <td>Precision</td>
+                <td>75.6%</td>
+            </tr>
+            <tr id="nb">
+                <td>Recall</td>
+                <td>72.7%</td>
+            </tr>
+            <tr id="knn">
+                <td>F1-Score</td>
+                <td>73.6%</td>
+            </tr>
+        </tbody>
+    </table>
 </body>
 </html>
