@@ -8,6 +8,13 @@
     <link rel="stylesheet" href="{{url_for('static', filename = 'css/predictions.css')}}">
 </head>
 <body>
+    <div id="pop">
+        <ul>
+            <a href="/change_pass"> <li> Change Password</li> </a>
+            <div class = "bor"></div>
+            <li> Logout</li>
+        </ul>
+    </div>
     <img src="{{url_for('static', filename = 'assets/img/black_img.png')}}" alt="" class = "banner_">
     <div class = "total">
     <div class="navbar">
@@ -20,7 +27,7 @@
             <li> <a href="features_page"> Features </a></li>
             <li> <a href="predictions"> Prediction </a></li>
             <li> <a href="contact_page"> Contact </a></li>
-            <i class="fa-regular fa-user"></i>
+            <i class="fa-regular fa-user" id = "user"></i>
 
         </ul>
     </div>
@@ -84,5 +91,6 @@
         </form>
     </div>
     </div>
+    <script src="{{url_for('static', filename = 'JS/profile.js')}}"></script>
 </body>
 </html>

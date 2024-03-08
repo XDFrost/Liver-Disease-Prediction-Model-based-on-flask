@@ -8,6 +8,13 @@
     <title>Detailed Analysis</title>
 </head>
 <body>
+    <div id="pop">
+        <ul>
+            <a href="/change_pass"> <li> Change Password</li> </a>
+            <div class = "bor"></div>
+            <li> Logout</li>
+        </ul>
+    </div>
     <div class = "black">
         <!-- BACKGROUND IMAGE -->
         <!-- <img src="{{url_for('static', filename = 'assets/img/main_back.jpg')}}" alt="background" class="banner"> -->
@@ -24,7 +31,7 @@
                 <li> <a href="features_page"> Features </a></li>
                 <li> <a href="predictions"> Prediction </a></li>
                 <li> <a href="contact_page"> Contact </a></li>
-                <i class="fa-regular fa-user"></i>
+                <i class="fa-regular fa-user" id = "user"></i>
             </ul>
         </div>
     </div>
@@ -109,4 +116,6 @@
         </tbody>
     </table>
 </body>
+<script src="{{url_for('static', filename = 'JS/profile.js')}}"></script>
+
 </html>

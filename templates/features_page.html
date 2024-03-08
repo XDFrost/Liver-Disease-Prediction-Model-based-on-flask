@@ -8,10 +8,19 @@
     <title>Features</title>
 </head>
 <body>
+    <div id="pop">
+        <ul>
+            <a href="/change_pass"> <li> Change Password</li> </a>
+            <div class = "bor"></div>
+            <li> Logout</li>
+        </ul>
+    </div>
+
+    <div class="main">
     <div class = "black">
         <!-- BACKGROUND IMAGE -->
-        <img src="{{url_for('static', filename = 'assets/img/main_back.jpg')}}" alt="background" class="banner">
-        <img src="{{url_for('static', filename = 'assets/img/black_img.png')}}" alt="" class = "banner_">
+        <!-- <img src="{{url_for('static', filename = 'assets/img/main_back.jpg')}}" alt="background" class="banner"> -->
+        <!-- <img src="{{url_for('static', filename = 'assets/img/black_img.png')}}" alt="" class = "banner_"> -->
         
         <!-- NAVBAR -->
         <div class="navbar">
@@ -24,10 +33,94 @@
                 <li> <a href="features_page"> Features </a></li>
                 <li> <a href="predictions"> Prediction </a></li>
                 <li> <a href="contact_page"> Contact </a></li>
-                <i class="fa-regular fa-user"></i>
+                <i class="fa-regular fa-user" id = "user"></i>
             </ul>
         </div>
     </div>
 
+    <div class="content">
+        <h2>Features</h2>
+        <p>Loads of features. Making it easier for anyone to predict the chance of getting heart disease. <br>Shows analysis done on large data sets.</p>
+    </div>
+
+    <div class = features>
+        <div class = feature1>
+            <div class = img1>
+                <img src="{{url_for('static', filename = 'assets/img/feature1.png')}}" alt="img">
+            </div>
+            <div class = text>
+                <h2>Available on GitHub <i class="fab fa-github"></i> </h2>
+                <p>The web page's source code is freely available on GitHub. See the code, modify and use freely under GNU GPL-3.0 licence. Just notify the changes made to author.</p>
+                <ol>
+                    <li>
+                        <p><i class="fa-solid fa-check"></i> Clone At Github </p>
+                    </li>
+                    <br>
+
+                    <li>
+                        <p><i class="fa-solid fa-check"></i> Open Source </p>
+                    </li>
+                    <br>
+
+                    <li>
+                        <p><i class="fa-solid fa-check"></i> View, modify and use freely under GNU GPL-3.0 license</p>
+                    </li>
+                </ol>
+            </div>
+        </div>
+        <div class = feature1>
+            <div class = text>
+                <h2>Analysis Data Set and Code Available <i class="fab fa-github"></i> </h2>
+                <p>Data set on which the analysis is done is available. Also, the code used for analysing the data and get prediction rates is made available.</p>
+                <ol>
+                    <li>
+                        <p><i class="fa-solid fa-check"></i> Clone At Github </p>
+                    </li>
+                    <br>
+                    <li>
+                        <p><i class="fa-solid fa-check"></i> Open Source </p>
+                    </li>
+                    <br>
+                    <li>
+                        <p><i class="fa-solid fa-check"></i> View, modify and use freely under GNU GPL-3.0 license</p>
+                    </li>
+                </ol>
+            </div>
+            <div class = img2>
+                <img src="{{url_for('static', filename = 'assets/img/feature2.png')}}" alt="img">
+            </div>
+        </div>
+        <div class = feature1>
+            <div class = img3>
+                <img src="{{url_for('static', filename = 'assets/img/feature3.png')}}" alt="img">
+            </div>
+            <div class = text>
+                <h2>Available on GitHub <i class="fab fa-github"></i> </h2>
+                <p>The code used for analysis of data and getting prediction rates is pretty simple. The code is written in Python and Jupyter Notebook.</p>
+                <ol>
+                    <li>
+                        <p><i class="fa-solid fa-check"></i> Clone At Github </p>
+                    </li>
+                    <br>
+
+                    <li>
+                        <p><i class="fa-solid fa-check"></i> Easy to Understand </p>
+                    </li>
+                    <br>
+
+                    <li>
+                        <p><i class="fa-solid fa-check"></i> Easy to Modify </p>
+                    </li>
+                    <br>
+
+                    <li>
+                        <p><i class="fa-solid fa-check"></i> Written in Python and Jupyter Notebook</p>
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
+<script src="{{url_for('static', filename = 'JS/profile.js')}}"></script>
 </html>
