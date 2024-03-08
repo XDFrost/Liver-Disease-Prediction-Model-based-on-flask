@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>SafeInsights</title>
+    <link rel="stylesheet" href="{{url_for('static', filename = 'css/detailed_predictions.css')}}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+
+<body>
+    <div class=whole>
+        <!-- BACKGROUND IMAGE -->
+        <img src="{{url_for('static', filename = 'assets/img/main_back.jpg')}}" alt="background" class="banner">
+        <img src="{{url_for('static', filename = 'assets/img/black_img.png')}}" alt="" class="banner_">
+        <div class="black">
+            <!-- NAVBAR -->
+            <div class="navbar">
+                <div class=heading>
+                    <img src="{{url_for('static', filename = 'assets/img/logo.png')}}" alt="logo" class="logo">
+                    <h3>SafeInsights</h3>
+                </div>
+                <ul>
+                    <li> <a href="home_page"> Home </a></li>
+                    <li> <a href="features_page"> Features </a></li>
+                    <li> <a href="predictions"> Prediction </a></li>
+                    <li> <a href="contact_page"> Contact </a></li>
+                    <i class="fa-regular fa-user"></i>
+                </ul>
+            </div>
+            <div class="tot">
+                <div class="content">
+                    <p>{{ans|safe}}</p>
+                </div>
+                <div class="button__">
+                    <a href="/detailed_analysis"><button type="button"> Detailed Analysis </button></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="con">
+            <h1>Diabetes care: 10 ways to avoid complications</h1>
+        </div>
+
+            <div class=context>
+                <div>
+                    <h2>1. Make a commitment to managing your diabetes</h2>
+                    <p>Members of your diabetes care team — primary care provider, diabetes care and education
+                        specialist, and dietitian, for example — can help you learn the basics of diabetes care and
+                        offer support along the way. But it's up to you to manage your condition.
+
+                        Learn all you can about diabetes. Make healthy eating and physical activity part of your daily
+                        routine. Maintain a healthy weight.
+
+                        Monitor your blood sugar, and follow your health care provider's instructions for managing your
+                        blood sugar level. Take your medications as directed by your health care provider. Ask your
+                        diabetes treatment team for help when you need it</p>
+                </div>
+
+                <div>
+                    <h2>2. Don't smoke</h2>
+                    <p>Avoid smoking or quit smoking if you smoke. Smoking increases your risk of type 2 diabetes and
+                        the risk of various diabetes complications, including:</p>
+                    <ul>
+                        <li>Reduced blood flow in the legs and feet, which can lead to infections, nonhealing ulcers and
+                            possible amputation</li>
+                        <li>Worse blood sugar control</li>
+                        <li>Heart disease</li>
+                        <li>Stroke</li>
+                        <li>Eye disease, which can lead to blindness</li>
+                        <li>Nerve damage</li>
+                        <li>Kidney disease</li>
+                        <li>Premature death</li>
+                    </ul>
+                    <p>Talk to your health care provider about ways to help you stop smoking or using other types of tobacco. </p>
+                </div>
+
+                <div>
+                    <h2>3. Keep your blood pressure and cholesterol under control</h2>
+                    <p>Like diabetes, high blood pressure can damage your blood vessels. High cholesterol is a concern, too, since the resulting damage is often worse and more rapid when you have diabetes. When these conditions team up, they can lead to a heart attack, stroke or other life-threatening conditions.
+
+                        Eating a healthy, reduced-fat and low salt diet, avoiding excess alcohol, and exercising regularly can go a long way toward controlling high blood pressure and cholesterol. Your health care provider may also recommend taking prescription medication, if necessary.</p>
+                </div>
+            </div>
+    </div>
+
+</body>
+
+</html>

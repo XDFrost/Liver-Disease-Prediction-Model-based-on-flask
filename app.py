@@ -152,45 +152,50 @@ def contact_page():
 def features_page():
     return render_template('features_page.html', params = params)
 
-@app.route('/predictions_page', methods = ['GET', 'POST'])
-def predictions_page():
-    # ans = None
+@app.route('/predictions', methods = ['GET', 'POST'])
+def predictions():
+    ans = None
     if request.method == 'POST':
-        # Age = request.form.get('Age')
-        # Pregnancies = request.form.get('Pregnancies')
-        # Glucose = request.form.get('Glucose')
-        # BloodPressure = request.form.get('BloodPressure')
-        # Insulin = request.form.get('Insulin')
-        # Bmi = request.form.get('BMI')
-        # SkinThickness = request.form.get('SkinThickness')
-        # Dpf = request.form.get('DPF')
+        Age = request.form.get('Age')
+        Pregnancies = request.form.get('Pregnancies')
+        Glucose = request.form.get('Glucose')
+        BloodPressure = request.form.get('BloodPressure')
+        Insulin = request.form.get('Insulin')
+        Bmi = request.form.get('BMI')
+        SkinThickness = request.form.get('SkinThickness')
+        Dpf = request.form.get('DPF')
         
-        # def prediction(Pregnancies, Glucose, BloodPressure, SkinThickness, Insulin, Bmi, Dpf, Age):
-        #     input = pd.DataFrame([[Pregnancies, Glucose, BloodPressure, SkinThickness, Insulin, Bmi, Dpf, Age]])
-        #     pickle_df = input
-        #     scalar = pkl.load(open('scaler.pkl', 'rb'))
-        #     pickle_df = scalar.transform(pickle_df)
-        #     model = pkl.load(open('lr.pkl', 'rb'))
-        #     prediction = model.predict(pickle_df)
-        #     if prediction == 1:
-        #         return 1                    # Person is Diabetic
-        #     else:
-        #         return 0                    # Person is Non-Diabetic
+        def predict(Pregnancies, Glucose, BloodPressure, SkinThickness, Insulin, Bmi, Dpf, Age):
+            input_data = pd.DataFrame([[Pregnancies, Glucose, BloodPressure, SkinThickness, Insulin, Bmi, Dpf, Age]])
+            scaler = pkl.load(open('scaler.pkl', 'rb'))
+            input_data = scaler.transform(input_data)
+            model = pkl.load(open('nb.pkl', 'rb'))
+            prediction = model.predict(input_data)
+            if prediction == 1:
+                return f"You have high chances of being Diabetic! <br> Please consult a Doctor"  # Person is Diabetic
+            else:
+                return "You have low chances of being Diabetic <br> Please maintain a healthy life style"  # Person is Non-Diabetic
 
-        # ans = prediction(Pregnancies, Glucose, BloodPressure, SkinThickness, Insulin, Bmi, Dpf, Age)
-        # print(ans)
-        # return redirect(url_for('predictions_page', params = params, ans = ans))
-        print("Right")
-    else:
-        print("Wrong")
-            
-    # return render_template('predictions_page.html', params = params, ans = ans)
-    return render_template('predictions_page.html')
+        ans = predict(Pregnancies, Glucose, BloodPressure, SkinThickness, Insulin, Bmi, Dpf, Age)
+        return redirect(url_for('detailed_predictions', ans = ans))
 
+    return render_template('predictions.html', ans=ans)
+
+
+@app.route("/detailed_predictions", methods = ['GET', 'POST'])
+def detailed_predictions():
+    ans = request.args.get('ans', default = "Try again", type = str)
+    return render_template("detailed_predictions.html", params = params, ans = ans)
+        
 
 @app.route('/home_page', methods = ['GET', 'POST'])
 def home_page():
     return render_template('home_page.html', params = params)
+
+
+@app.route('/detailed_analysis')
+def detailed_analysis():
+    return render_template('detailed_analysis.html', params = params)
 
 
 if __name__ == "__main__":

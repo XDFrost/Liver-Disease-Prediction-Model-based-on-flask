@@ -1,0 +1,133 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background-color: #010450;
+}
+
+
+.banner {
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    top: 0;
+    z-index: 0;
+}
+
+.banner_ {
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    top: 0;
+    z-index: 0.5;
+    filter: opacity(0.5);
+}
+
+.navbar {
+    position: relative;
+    width: 95%;
+    margin: auto;
+    padding: 15px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    height: 50px;
+    width: 50px;
+    cursor: pointer;
+}
+
+.navbar ul li {
+    list-style: none;
+    display: inline-block;
+    margin: 0 20px;
+    position: relative;
+}
+
+.navbar ul li a{
+    text-decoration: none;
+    color: #ffff;
+    text-transform: uppercase;
+}
+
+.navbar ul li::after {
+    content: '';
+    position: absolute;
+    height: 3px;
+    width: 0;
+    background-color: #ffff;
+    left: 0;
+    transition: 0.5s;
+    bottom: -10px;
+}
+
+.navbar ul li:hover::after {
+    width: 100%;
+}
+
+.fa-regular {
+    font-size: 30px;
+    padding-left: 40px;
+    color: #ffff;
+}
+
+.heading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    color: #ffff;   
+}
+
+.heading h3 {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+/* .models {
+    z-index: 1;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    border: #ffff 2px solid;
+    width: 40%;
+    margin: 0 auto;
+    gap: 20px;
+    color: #ffff;
+    margin-top: 30px;
+    border-radius: 30px;
+    opacity: 0.94;
+    box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.24);
+    backdrop-filter: blur(50px);
+} */
+
+
+table {
+    width: 30%;
+    border-collapse: collapse;
+    margin: 20px;
+    color: #ffff;
+    margin: 70px auto;
+}
+
+th, td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+th {
+    color: #000000;
+    background-color: #ffffff;
+}
+
+.plots {
+    height: 800px;
+    width: 900px
+}
