@@ -1,7 +1,7 @@
 let profile = document.getElementById("user")
 let isOpen = false;
 
-profile.addEventListener("click", function() {
+profile.addEventListener("click", () => {
     if(isOpen){
         document.getElementById("pop").style.display = "none";
         isOpen = false;

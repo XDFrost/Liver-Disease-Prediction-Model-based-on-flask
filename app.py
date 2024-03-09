@@ -6,6 +6,10 @@ from flask_bcrypt import Bcrypt
 import json
 import pickle as pkl
 import pandas as pd
+import os
+from dotenv import load_dotenv
+load_dotenv() 
+
 
 
 app = Flask(__name__)
@@ -16,21 +20,21 @@ with open('config.json', 'r') as c:
 
 
 local_server = params['local_server']
-app.secret_key = params['secret_key']
+app.secret_key = os.getenv("secret_key")  
 
 
 if(local_server == "True"):
     app.config['SQLALCHEMY_DATABASE_URI'] = params['local_URI']
 else:
-    app.config['SQLALCHEMY_DATABASE_URI'] = params['production_URI']
+    app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv("production_URI")
 
 
 app.config.update(                                       # Sending mail
     MAIL_SERVER = params['MAIL_SERVER'],                 # Default gmail server
     MAIL_PORT = params['MAIL_PORT'],                     # Default gmail port
     MAIL_USE_SSL = True,                                 # Using authentication
-    MAIL_USERNAME = params['MAIL_USERNAME'],             # fetching mail
-    MAIL_PASSWORD = params['MAIL_PASSWORD'],             # fetching app pass
+    MAIL_USERNAME = os.getenv("MAIL_USERNAME"),             # fetching mail
+    MAIL_PASSWORD = os.getenv("MAIL_PASSWORD"),             # fetching app pass
 )
 
 
@@ -172,9 +176,9 @@ def predictions():
             model = pkl.load(open('nb.pkl', 'rb'))
             prediction = model.predict(input_data)
             if prediction == 1:
-                return f"You have high chances of being Diabetic! <br> Please consult a Doctor"  # Person is Diabetic
+                return f"You have high chances of liver Disease! <br> Please consult a Doctor"  # Person is Diabetic
             else:
-                return "You have low chances of being Diabetic <br> Please maintain a healthy life style"  # Person is Non-Diabetic
+                return "You have low chances of liver Disease <br> Please maintain a healthy life style"  # Person is Non-Diabetic
 
         ans = predict(Pregnancies, Glucose, BloodPressure, SkinThickness, Insulin, Bmi, Dpf, Age)
         return redirect(url_for('detailed_predictions', ans = ans))
