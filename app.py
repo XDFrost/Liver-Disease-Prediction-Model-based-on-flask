@@ -176,9 +176,9 @@ def predictions():
             model = pkl.load(open('nb.pkl', 'rb'))
             prediction = model.predict(input_data)
             if prediction == 1:
-                return f"You have high chances of liver Disease! <br> Please consult a Doctor"  # Person is Diabetic
+                return f"You have high chances of Diabetes! <br> Please consult a Doctor"  # Person is Diabetic
             else:
-                return "You have low chances of liver Disease <br> Please maintain a healthy life style"  # Person is Non-Diabetic
+                return "You have low chances of Diabetes <br> Please maintain a healthy life style"  # Person is Non-Diabetic
 
         ans = predict(Pregnancies, Glucose, BloodPressure, SkinThickness, Insulin, Bmi, Dpf, Age)
         return redirect(url_for('detailed_predictions', ans = ans))
