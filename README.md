@@ -1,4 +1,4 @@
-# Liver Disease Prediction Model
+# Diabetes Prediction Model
 
 ![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)
 
@@ -44,17 +44,24 @@ This repository contains the source code and implementation for a liver disease 
 
 ## Usage
 
-1. Add uri and app passwords to config.json file
+1. Add uri and app passwords to config.json file. Make a .env file and add variables in it
+   
+   Required variables for .env file:
 
-2. Start the Flask application:
+      1. production_URI
+      2. secret_key
+      3. MAIL_USERNAME
+      4. MAIL_PASSWORD
+
+3. Start the Flask application:
 
    ```bash
    python app.py
    ```
    
-3. Open your web browser and go to [http://localhost:5000](http://localhost:5000)
+4. Open your web browser and go to [http://localhost:5000](http://localhost:5000)
 
-4. Use the web interface to input the required features and get predictions.
+5. Use the web interface to input the required features and get predictions.
 
 ## License
 
