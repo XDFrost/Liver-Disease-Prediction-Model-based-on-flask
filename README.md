@@ -1,4 +1,4 @@
-# Liver Disease Prediction Model
+# Diabetes Prediction Model
 
 ![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)
 
