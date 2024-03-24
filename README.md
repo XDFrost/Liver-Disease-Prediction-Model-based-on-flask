@@ -27,13 +27,13 @@ This repository contains the source code and implementation for a liver disease 
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-username/liver-disease-prediction.git
+   git clone https://github.com/XDFrost/SafeInsights-Diabetes-Prediction-Model-based-on-flask.git
    ```
    
 2. Change into the project directory:
 
    ```bash
-   cd liver-disease-prediction
+   cd SafeInsights-Diabetes-Prediction-Model-based-on-flask
    ```
    
 3. Install the required dependencies:
